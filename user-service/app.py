@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker
 app = Flask(__name__)
 
 # Database connection URL (replace with your RDS endpoint, username, and password)
-DATABASE_URL = "mysql+pymysql://admin:Bankappdev25@bank-app-db.cbeys6swcwgr.us-east-1.rds.amazonaws.com:3306/"
+DATABASE_URL = "mysql+pymysql://admin:Bankappdev25@bank-app-db.c5uw8so8cf26.ap-southeast-2.rds.amazonaws.com:3306/bank_app"
 
 # SQLAlchemy setup
 engine = create_engine(DATABASE_URL)
