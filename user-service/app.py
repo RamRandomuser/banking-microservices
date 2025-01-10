@@ -70,8 +70,8 @@ def login_user():
     if not bcrypt.checkpw(data['password'].encode('utf-8'), user.password.encode('utf-8')):
         return jsonify({"error": "Invalid email or password"}), 401
 
-    # Generate JWT token
-    access_token = create_access_token(identity={"username": user.username, "email": user.email})
+    # Generate JWT token (pass a serializable object or string as the identity)
+    access_token = create_access_token(identity=user.username)
     return jsonify({"message": "Login successful", "access_token": access_token}), 200
 
 @app.route('/protected', methods=['GET'])
